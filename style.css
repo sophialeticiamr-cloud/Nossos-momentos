@@ -1,5 +1,28 @@
 body {
-  font-family: 'Poppins', sans-serif;
+:root {
+  --fundo: #f6f8f4;
+  --verde-claro: #cce3d1;
+  --verde-escuro: #6b9080;
+  --rose: #f5c2c2;
+  --bege: #f5e8dc;
+  --texto: #4a4a4a;
+}
+body {
+  background: var(--fundo);
+  color: var(--texto);
+}
+
+header {
+  background: linear-gradient(120deg, var(--verde-claro), var(--bege));
+}
+
+nav button {
+  background: var(--verde-claro);
+}
+
+.login-box button {
+  background: var(--rose);
+}  font-family: 'Poppins', sans-serif;
   background: #f6f8f4;
   margin: 0;
   color: #4a4a4a;
@@ -80,3 +103,71 @@ table {
   background: white;
   border-radius: 15px;
 }
+#login {
+  position: fixed;
+  inset: 0;
+  background: linear-gradient(120deg, #f5e8dc, #cce3d1);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 999;
+}
+
+.login-box {
+  background: white;
+  padding: 30px;
+  border-radius: 25px;
+  text-align: center;
+  width: 300px;
+  box-shadow: 0 10px 25px rgba(0,0,0,0.1);
+}
+
+.login-box input {
+  width: 100%;
+  margin-bottom: 10px;
+  padding: 10px;
+  border-radius: 15px;
+  border: 1px solid #ccc;
+}
+
+.login-box button {
+  background: #b7d3c6;
+  border: none;
+  padding: 10px 20px;
+  border-radius: 20px;
+  cursor: pointer;
+}
+#darkToggle {
+  position: absolute;
+  top: 20px;
+  right: 20px;
+  border: none;
+  background: white;
+  padding: 10px;
+  border-radius: 50%;
+  cursor: pointer;
+}
+
+/* 🌙 TEMA ESCURO */
+body.dark {
+  background: #1e1e1e;
+  color: #f0f0f0;
+}
+
+body.dark header {
+  background: linear-gradient(120deg, #2c2c2c, #3a3a3a);
+}
+
+body.dark .card,
+body.dark #formulario,
+body.dark table,
+body.dark .login-box {
+  background: #2b2b2b;
+  color: #f0f0f0;
+}
+
+body.dark nav button {
+  background: #444;
+  color: white;
+}
+

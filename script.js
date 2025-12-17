@@ -100,3 +100,127 @@ function atualizarMapa() {
       });
   });
 }
+const USUARIO = "amor";
+const SENHA = "paraSempre";
+
+function entrar() {
+  const u = document.getElementById("user").value;
+  const p = document.getElementById("password").value;
+
+  if (u === USUARIO && p === SENHA) {
+    localStorage.setItem("logado", "sim");
+    document.getElementById("login").style.display = "none";
+  } else {
+    alert("Usuário ou senha incorretos 💔");
+  }
+}
+
+if (localStorage.getItem("logado") === "sim") {
+  document.addEventListener("DOMContentLoaded", () => {
+    document.getElementById("login").style.display = "none";
+  });
+}
+const USUARIO = "amor";
+const SENHA = "paraSempre";
+function alternarTema() {
+  document.body.classList.toggle("dark");
+
+  const tema = document.body.classList.contains("dark") ? "escuro" : "claro";
+  localStorage.setItem("tema", tema);
+
+  document.getElementById("darkToggle").innerText =
+    tema === "escuro" ? "☀️" : "🌙";
+}
+
+document.addEventListener("DOMContentLoaded", () => {
+  const temaSalvo = localStorage.getItem("tema");
+
+  if (temaSalvo === "escuro") {
+    document.body.classList.add("dark");
+    document.getElementById("darkToggle").innerText = "☀️";
+  }
+});
+const lugar = {
+  nome: nome.value,
+  categoria: categoria.value,
+  imagem: imagem.value,
+  localizacao: localizacao.value,
+  estrelas: 0,
+  visitado: false,
+  emojiEla: "",
+  emojiEle: ""
+};
+card.innerHTML = `
+  <img src="${lugar.imagem}">
+  <h3>${lugar.nome}</h3>
+
+  <div class="estrelas">
+    ${[1,2,3,4,5].map(n => 
+      `<span onclick="avaliar(${index},${n})">
+        ${n <= lugar.estrelas ? "⭐" : "☆"}
+      </span>`).join("")}
+  </div>
+
+  <p>💁‍♀️ Você:
+    <select onchange="emojiEla(${index}, this.value)">
+      <option value="">—</option>
+      <option>💖</option>
+      <option>😍</option>
+      <option>😊</option>
+      <option>🥰</option>
+      <option>😐</option>
+      <option>🙄</option>
+      <option>😰</option>
+      <option>🍅</option>
+    </select>
+  </p>
+
+  <p>👨 Ele:
+    <select onchange="emojiEle(${index}, this.value)">
+      <option value="">—</option>
+      <option>💖</option>
+      <option>😍</option>
+      <option>😊</option>
+      <option>🥰</option>
+      <option>😐</option>
+      <option>🙄</option>
+      <option>😰</option>
+      <option>🍅</option>
+    </select>
+  </p>
+
+  <button onclick="marcarVisitado(${index})">
+    ${lugar.visitado ? "Já visitamos 💕" : "Marcar como visitado"}
+  </button>
+`;
+function emojiEla(i, valor) {
+  lugares[i].emojiEla = valor;
+  salvar();
+}
+
+function emojiEle(i, valor) {
+  lugares[i].emojiEle = valor;
+  salvar();
+}
+const favorito =
+  lugar.estrelas >= 4 ||
+  lugar.emojiEla === "💖" ||
+  lugar.emojiEle === "💖";
+card.className = "card" + 
+  (lugar.visitado ? " visitado" : "") +
+  (favorito ? " favorito" : "");
+.favorito {
+  border: 2px solid var(--rose);
+}
+const dataInicio = new Date("2022-08-15"); // MUDE AQUI 💕
+
+function atualizarContador() {
+  const hoje = new Date();
+  const diff = hoje - dataInicio;
+  const dias = Math.floor(diff / (1000 * 60 * 60 * 24));
+
+  document.getElementById("dias").innerText =
+    `${dias} dias de amor 💕`;
+}
+
+atualizarContador();
