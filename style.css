@@ -39,17 +39,25 @@ h1 {
 nav {
   display: flex;
   justify-content: center;
-  gap: 10px;
-  padding: 20px;
+  gap: 15px; /* MAIS ESPAÇO ENTRE ELES */
+  padding: 30px 10px;
 }
 
 nav button {
   background: var(--verde-claro);
   border: none;
-  padding: 10px 15px;
-  border-radius: 20px;
+  padding: 12px 22px;
+  border-radius: 30px; /* BEM REDONDINHO */
   cursor: pointer;
+  font-size: 15px;
+  transition: transform 0.2s, box-shadow 0.2s;
 }
+
+nav button:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 6px 15px rgba(0,0,0,0.1);
+}
+
 
 /* =========================
    FORMULÁRIO
@@ -195,4 +203,40 @@ body.dark nav button {
   text-align: center;
   padding: 20px;
   font-size: 22px;
+}
+#formulario {
+  background: white;
+  padding: 30px;
+  margin: 40px auto;
+  border-radius: 30px; /* MAIS ARREDONDADO */
+  max-width: 900px;
+  box-shadow: 0 8px 25px rgba(0,0,0,0.06);
+}
+
+#formulario h2 {
+  margin-bottom: 20px;
+}
+
+#formulario input {
+  display: block;
+  width: 100%;
+  margin-bottom: 18px; /* MAIS ESPAÇO */
+  padding: 14px;
+  border-radius: 18px; /* MAIS ARREDONDADO */
+  border: 1px solid #ddd;
+  font-size: 15px;
+}
+
+#formulario button {
+  background: var(--verde-escuro);
+  color: white;
+  border: none;
+  padding: 14px 30px;
+  border-radius: 25px;
+  cursor: pointer;
+  font-size: 16px;
+}
+
+#formulario button:hover {
+  opacity: 0.9;
 }
