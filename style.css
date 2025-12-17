@@ -123,43 +123,6 @@ table {
   border-radius: 15px;
 }
 
-/* =========================
-   LOGIN
-========================= */
-#login {
-  position: fixed;
-  inset: 0;
-  background: linear-gradient(120deg, var(--bege), var(--verde-claro));
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  z-index: 999;
-}
-
-.login-box {
-  background: white;
-  padding: 30px;
-  border-radius: 25px;
-  text-align: center;
-  width: 300px;
-  box-shadow: 0 10px 25px rgba(0,0,0,0.1);
-}
-
-.login-box input {
-  width: 100%;
-  margin-bottom: 10px;
-  padding: 10px;
-  border-radius: 15px;
-  border: 1px solid #ccc;
-}
-
-.login-box button {
-  background: var(--rose);
-  border: none;
-  padding: 10px 20px;
-  border-radius: 20px;
-  cursor: pointer;
-}
 
 /* =========================
    BOTÃO MODO ESCURO

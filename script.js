@@ -93,14 +93,14 @@ function renderizar(filtro = "todos") {
         ).join("")}
       </div>
 
-      <p>💁‍♀️ Você:
+      <p>💁‍♀️ Sophi:
         <select onchange="emojiEla(${index}, this.value)">
           <option value="">—</option>
           ${emojiOptions(lugar.emojiEla)}
         </select>
       </p>
 
-      <p>👨 Ele:
+      <p>👨 Luiz:
         <select onchange="emojiEle(${index}, this.value)">
           <option value="">—</option>
           ${emojiOptions(lugar.emojiEle)}
