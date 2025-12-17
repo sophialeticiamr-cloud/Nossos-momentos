@@ -203,3 +203,29 @@ body.dark nav button {
 #formulario button:hover {
   opacity: 0.9;
 }
+#categorias {
+  display: flex;
+  gap: 12px;
+  flex-wrap: wrap;
+  margin-bottom: 20px;
+}
+
+#categorias button {
+  background: var(--bege);
+  border: none;
+  padding: 12px 20px;
+  border-radius: 25px;
+  cursor: pointer;
+  font-size: 14px;
+}
+
+#categorias button.ativo {
+  background: var(--verde-escuro);
+  color: white;
+}
+
+#categoriaSelecionada {
+  margin-top: 10px;
+  font-size: 14px;
+  opacity: 0.7;
+}

@@ -62,4 +62,39 @@
 <script src="script.js"></script>
 </body>
 </html>
+<div id="categorias">
+  <button onclick="selecionarCategoria('museus')">🏛 Museus</button>
+  <button onclick="selecionarCategoria('restaurantes')">🍽 Restaurantes</button>
+  <button onclick="selecionarCategoria('shoppings')">🛍 Shoppings</button>
+  <button onclick="selecionarCategoria('outros')">✨ Outros</button>
+</div>
+
+<p id="categoriaSelecionada"></p>
+function adicionarLugar() {
+  if (!categoriaAtual) {
+    alert("Escolha uma categoria 💖");
+    return;
+  }
+
+  const lugar = {
+    nome: nome.value,
+    categoria: categoriaAtual,
+    imagem: imagem.value,
+    localizacao: localizacao.value,
+    estrelas: 0,
+    visitado: false
+  };
+
+  lugares.push(lugar);
+  salvar();
+  renderizar();
+
+  nome.value = "";
+  imagem.value = "";
+  localizacao.value = "";
+  categoriaAtual = "";
+  document.getElementById("categoriaSelecionada").innerText = "";
+  document.querySelectorAll("#categorias button")
+    .forEach(btn => btn.classList.remove("ativo"));
+}
 

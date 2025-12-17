@@ -1,4 +1,17 @@
 
+  let categoriaAtual = "";
+function selecionarCategoria(cat) {
+  categoriaAtual = cat;
+
+  document.querySelectorAll("#categorias button")
+    .forEach(btn => btn.classList.remove("ativo"));
+
+  event.target.classList.add("ativo");
+
+  document.getElementById("categoriaSelecionada").innerText =
+    "Categoria escolhida: " + cat;
+}
+
   const tema = localStorage.getItem("tema");
   if (tema === "escuro") {
     document.body.classList.add("dark");
@@ -7,7 +20,7 @@
 
   renderizar();
   atualizarContador();
-});
+
 
 /* =========================
    MODO ESCURO
