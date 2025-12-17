@@ -231,3 +231,45 @@ function atualizarContador() {
 }
 
 document.addEventListener("DOMContentLoaded", atualizarContador);
+let lugares = JSON.parse(localStorage.getItem("lugares")) || [];
+let categoriaAtual = "";
+function selecionarCategoria(cat) {
+  categoriaAtual = cat;
+
+  document.querySelectorAll("#categorias button")
+    .forEach(btn => btn.classList.remove("ativo"));
+
+  event.target.classList.add("ativo");
+
+  document.getElementById("categoriaSelecionada").innerText =
+    "Categoria escolhida: " + cat;
+}
+function adicionarLugar() {
+  if (!categoriaAtual) {
+    alert("Escolha uma categoria 💖");
+    return;
+  }
+
+  const lugar = {
+    nome: nome.value,
+    categoria: categoriaAtual,
+    imagem: imagem.value,
+    localizacao: localizacao.value,
+    estrelas: 0,
+    visitado: false
+  };
+
+  lugares.push(lugar);
+  salvar();
+  renderizar();
+
+  nome.value = "";
+  imagem.value = "";
+  localizacao.value = "";
+
+  categoriaAtual = "";
+  document.getElementById("categoriaSelecionada").innerText = "";
+  document.querySelectorAll("#categorias button")
+    .forEach(btn => btn.classList.remove("ativo"));
+}
+
