@@ -7,14 +7,38 @@
   <!-- Fontes -->
   <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600&family=Poppins&display=swap" rel="stylesheet">
 
+  <!-- Leaflet (Mapa) -->
+  <link rel="stylesheet" href="https://unpkg.com/leaflet/dist/leaflet.css">
+  <script src="https://unpkg.com/leaflet/dist/leaflet.js"></script>
+
   <link rel="stylesheet" href="style.css">
 </head>
+
 <body>
+
+<!-- LOGIN -->
+<div id="login">
+  <div class="login-box">
+    <h2>💖 Nosso Cantinho</h2>
+    <input id="user" placeholder="Usuário">
+    <input id="password" type="password" placeholder="Senha">
+    <button onclick="entrar()">Entrar</button>
+  </div>
+</div>
 
 <header>
   <h1>💖 Nossos Lugares Especiais</h1>
   <p>Um mapa das nossas memórias juntos</p>
+
+  <!-- BOTÃO MODO ESCURO -->
+  <button id="darkToggle" onclick="alternarTema()">🌙</button>
 </header>
+
+<!-- CONTADOR -->
+<section id="contador">
+  <h2>💖 Juntos há</h2>
+  <p id="dias"></p>
+</section>
 
 <nav>
   <button onclick="mostrarCategoria('todos')">Todos</button>
@@ -41,24 +65,9 @@
 <div id="mapa"></div>
 
 <h2>📊 Tabela dos lugares</h2>
-<table id="tabela">
-  <tr>
-    <th>Nome</th>
-    <th>Status</th>
-    <th>Avaliação</th>
-  </tr>
-</table>
+<table id="tabela"></table>
 
 <script src="script.js"></script>
 </body>
 </html>
-<button id="darkToggle" onclick="alternarTema()">🌙</button>
-<section id="contador">
-  <h2>💖 Juntos há</h2>
-  <p id="dias"></p>
-</section>
-#contador {
-  text-align: center;
-  padding: 20px;
-  font-size: 22px;
-}
+

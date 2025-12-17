@@ -1,4 +1,6 @@
-body {
+/* =========================
+   PALETA DO CASAL 🎨
+========================= */
 :root {
   --fundo: #f6f8f4;
   --verde-claro: #cce3d1;
@@ -7,37 +9,33 @@ body {
   --bege: #f5e8dc;
   --texto: #4a4a4a;
 }
+
+/* =========================
+   BASE
+========================= */
 body {
+  font-family: 'Poppins', sans-serif;
   background: var(--fundo);
   color: var(--texto);
-}
-
-header {
-  background: linear-gradient(120deg, var(--verde-claro), var(--bege));
-}
-
-nav button {
-  background: var(--verde-claro);
-}
-
-.login-box button {
-  background: var(--rose);
-}  font-family: 'Poppins', sans-serif;
-  background: #f6f8f4;
   margin: 0;
-  color: #4a4a4a;
 }
 
+/* =========================
+   HEADER
+========================= */
 header {
   text-align: center;
   padding: 40px;
-  background: linear-gradient(120deg, #cce3d1, #f5e8dc);
+  background: linear-gradient(120deg, var(--verde-claro), var(--bege));
 }
 
 h1 {
   font-family: 'Playfair Display', serif;
 }
 
+/* =========================
+   NAVEGAÇÃO
+========================= */
 nav {
   display: flex;
   justify-content: center;
@@ -46,13 +44,16 @@ nav {
 }
 
 nav button {
-  background: #b7d3c6;
+  background: var(--verde-claro);
   border: none;
   padding: 10px 15px;
   border-radius: 20px;
   cursor: pointer;
 }
 
+/* =========================
+   FORMULÁRIO
+========================= */
 #formulario {
   background: white;
   padding: 20px;
@@ -69,6 +70,9 @@ nav button {
   border: 1px solid #ccc;
 }
 
+/* =========================
+   CARDS
+========================= */
 .card {
   background: white;
   border-radius: 20px;
@@ -91,6 +95,13 @@ nav button {
   background: #d1f0d7;
 }
 
+.favorito {
+  border: 2px solid var(--rose);
+}
+
+/* =========================
+   MAPA E TABELA
+========================= */
 #mapa {
   height: 300px;
   margin: 20px;
@@ -103,10 +114,14 @@ table {
   background: white;
   border-radius: 15px;
 }
+
+/* =========================
+   LOGIN
+========================= */
 #login {
   position: fixed;
   inset: 0;
-  background: linear-gradient(120deg, #f5e8dc, #cce3d1);
+  background: linear-gradient(120deg, var(--bege), var(--verde-claro));
   display: flex;
   justify-content: center;
   align-items: center;
@@ -131,12 +146,16 @@ table {
 }
 
 .login-box button {
-  background: #b7d3c6;
+  background: var(--rose);
   border: none;
   padding: 10px 20px;
   border-radius: 20px;
   cursor: pointer;
 }
+
+/* =========================
+   BOTÃO MODO ESCURO
+========================= */
 #darkToggle {
   position: absolute;
   top: 20px;
@@ -148,7 +167,9 @@ table {
   cursor: pointer;
 }
 
-/* 🌙 TEMA ESCURO */
+/* =========================
+   🌙 TEMA ESCURO
+========================= */
 body.dark {
   background: #1e1e1e;
   color: #f0f0f0;
@@ -170,4 +191,8 @@ body.dark nav button {
   background: #444;
   color: white;
 }
-
+#contador {
+  text-align: center;
+  padding: 20px;
+  font-size: 22px;
+}
