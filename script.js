@@ -1,25 +1,3 @@
-/* =========================
-   LOGIN DO CASAL
-========================= */
-const USUARIO = "amor";
-const SENHA = "paraSempre";
-
-function entrar() {
-  const u = document.getElementById("user").value;
-  const p = document.getElementById("password").value;
-
-  if (u === USUARIO && p === SENHA) {
-    localStorage.setItem("logado", "sim");
-    document.getElementById("login").style.display = "none";
-  } else {
-    alert("Usuário ou senha incorretos 💔");
-  }
-}
-
-document.addEventListener("DOMContentLoaded", () => {
-  if (localStorage.getItem("logado") === "sim") {
-    document.getElementById("login").style.display = "none";
-  }
 
   const tema = localStorage.getItem("tema");
   if (tema === "escuro") {
