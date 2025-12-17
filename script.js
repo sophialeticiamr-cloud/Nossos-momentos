@@ -206,3 +206,15 @@ function atualizarContador() {
   document.getElementById("dias").innerText =
     `${dias} dias de amor 💕`;
 }
+const dataInicio = new Date("2022-08-15"); // ajuste se quiser 💕
+
+function atualizarContador() {
+  const hoje = new Date();
+  const diff = hoje - dataInicio;
+  const dias = Math.floor(diff / (1000 * 60 * 60 * 24));
+
+  document.getElementById("dias").innerText =
+    dias + " dias de amor 💖";
+}
+
+document.addEventListener("DOMContentLoaded", atualizarContador);
